@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="LearnCSharpApp.Views.LessonsPage"
+    x:Name="PageRoot"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:LearnCSharpApp.Models"
+    xmlns:viewModels="clr-namespace:LearnCSharpApp.ViewModels"
+    x:DataType="viewModels:LessonsViewModel"
+    Title="Уроки">
+
+    <Grid BackgroundColor="{AppThemeBinding Light=#F6F7FB, Dark=#111827}">
+        <CollectionView ItemsSource="{Binding Lessons}" SelectionMode="None" Margin="20,24">
+            <CollectionView.Header>
+                <VerticalStackLayout Spacing="16" Margin="0,0,0,20">
+                    <VerticalStackLayout Spacing="6">
+                        <Label
+                            Text="Уроки C#"
+                            FontSize="30"
+                            FontAttributes="Bold"
+                            TextColor="{AppThemeBinding Light=#111827, Dark=#F9FAFB}" />
+                        <Label
+                            Text="Выберите тему, изучите материал и отслеживайте завершенные уроки."
+                            FontSize="15"
+                            TextColor="{AppThemeBinding Light=#6B7280, Dark=#D1D5DB}" />
+                    </VerticalStackLayout>
+
+                    <Border
+                        Padding="14,4"
+                        Margin="4"
+                        StrokeThickness="0"
+                        StrokeShape="RoundRectangle 22"
+                        BackgroundColor="{AppThemeBinding Light=White, Dark=#1F2937}">
+                        <SearchBar
+                            Text="{Binding SearchText}"
+                            Placeholder="Поиск по урокам"
+                            FontSize="15"
+                            BackgroundColor="Transparent"
+                            CancelButtonColor="#6B7280"
+                            TextColor="{AppThemeBinding Light=#111827, Dark=#F9FAFB}"
+                            PlaceholderColor="#9CA3AF" />
+                    </Border>
+                </VerticalStackLayout>
+            </CollectionView.Header>
+
+            <CollectionView.EmptyView>
+                <VerticalStackLayout Padding="0,48" Spacing="10" HorizontalOptions="Center">
+                    <Label
+                        Text="Ничего не найдено"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        HorizontalTextAlignment="Center"
+                        TextColor="{AppThemeBinding Light=#111827, Dark=#F9FAFB}" />
+                    <Label
+                        Text="Попробуйте изменить поисковый запрос."
+                        FontSize="14"
+                        HorizontalTextAlignment="Center"
+                        TextColor="{AppThemeBinding Light=#6B7280, Dark=#D1D5DB}" />
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Lesson">
+                    <Border
+                        Margin="4,4,4,16"
+                        Padding="18"
+                        StrokeThickness="0"
+                        StrokeShape="RoundRectangle 26"
+                        BackgroundColor="{AppThemeBinding Light=White, Dark=#1F2937}">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding Source={x:Reference PageRoot}, Path=BindingContext.OpenLessonCommand}"
+                                CommandParameter="{Binding .}" />
+                        </Border.GestureRecognizers>
+
+                        <Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="14" RowSpacing="12">
+                            <Border
+                                WidthRequest="48"
+                                HeightRequest="48"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 16"
+                                BackgroundColor="#DBEAFE">
+                                <Label
+                                    Text="{Binding Id}"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    TextColor="#2563EB"
+                                    FontAttributes="Bold"
+                                    FontSize="18" />
+                            </Border>
+
+                            <VerticalStackLayout Grid.Column="1" Grid.ColumnSpan="2" Spacing="5">
+                                <Label
+                                    Text="{Binding Title}"
+                                    FontSize="18"
+                                    FontAttributes="Bold"
+                                    TextColor="{AppThemeBinding Light=#111827, Dark=#F9FAFB}" />
+                                <Label
+                                    Text="{Binding Description}"
+                                    FontSize="14"
+                                    LineBreakMode="WordWrap"
+                                    TextColor="{AppThemeBinding Light=#6B7280, Dark=#D1D5DB}" />
+                            </VerticalStackLayout>
+
+                            <HorizontalStackLayout Grid.Row="2" Grid.ColumnSpan="2" Spacing="10">
+                                <Border
+                                    Padding="12,6"
+                                    StrokeThickness="0"
+                                    StrokeShape="RoundRectangle 16"
+                                    BackgroundColor="#DCFCE7">
+                                    <Label
+                                        Text="{Binding Difficulty}"
+                                        FontSize="12"
+                                        FontAttributes="Bold"
+                                        TextColor="#166534">
+                                        <Label.Triggers>
+                                            <DataTrigger TargetType="Label" Binding="{Binding Difficulty}" Value="Средне">
+                                                <Setter Property="TextColor" Value="#92400E" />
+                                            </DataTrigger>
+                                            <DataTrigger TargetType="Label" Binding="{Binding Difficulty}" Value="Сложно">
+                                                <Setter Property="TextColor" Value="#991B1B" />
+                                            </DataTrigger>
+                                        </Label.Triggers>
+                                    </Label>
+                                    <Border.Triggers>
+                                        <DataTrigger TargetType="Border" Binding="{Binding Difficulty}" Value="Средне">
+                                            <Setter Property="BackgroundColor" Value="#FEF3C7" />
+                                        </DataTrigger>
+                                        <DataTrigger TargetType="Border" Binding="{Binding Difficulty}" Value="Сложно">
+                                            <Setter Property="BackgroundColor" Value="#FEE2E2" />
+                                        </DataTrigger>
+                                    </Border.Triggers>
+                                </Border>
+
+                                <Border
+                                    Padding="12,6"
+                                    StrokeThickness="0"
+                                    StrokeShape="RoundRectangle 16"
+                                    BackgroundColor="#F3F4F6">
+                                    <Label
+                                        Text="{Binding StatusText}"
+                                        FontSize="12"
+                                        FontAttributes="Bold"
+                                        TextColor="#4B5563">
+                                        <Label.Triggers>
+                                            <DataTrigger TargetType="Label" Binding="{Binding IsStarted}" Value="True">
+                                                <Setter Property="TextColor" Value="#92400E" />
+                                            </DataTrigger>
+                                            <DataTrigger TargetType="Label" Binding="{Binding IsCompleted}" Value="True">
+                                                <Setter Property="TextColor" Value="#166534" />
+                                            </DataTrigger>
+                                        </Label.Triggers>
+                                    </Label>
+                                    <Border.Triggers>
+                                        <DataTrigger TargetType="Border" Binding="{Binding IsStarted}" Value="True">
+                                            <Setter Property="BackgroundColor" Value="#FEF3C7" />
+                                        </DataTrigger>
+                                        <DataTrigger TargetType="Border" Binding="{Binding IsCompleted}" Value="True">
+                                            <Setter Property="BackgroundColor" Value="#DCFCE7" />
+                                        </DataTrigger>
+                                    </Border.Triggers>
+                                </Border>
+                            </HorizontalStackLayout>
+
+                            <Label
+                                Grid.Row="2"
+                                Grid.Column="2"
+                                Text=">"
+                                FontSize="24"
+                                VerticalOptions="Center"
+                                TextColor="#9CA3AF" />
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

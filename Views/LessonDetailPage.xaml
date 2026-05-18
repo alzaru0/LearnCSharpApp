@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="LearnCSharpApp.Views.LessonDetailPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewModels="clr-namespace:LearnCSharpApp.ViewModels"
+    x:DataType="viewModels:LessonDetailViewModel"
+    Title="{Binding LessonTitle}">
+
+    <ScrollView BackgroundColor="{AppThemeBinding Light=#F6F7FB, Dark=#111827}">
+        <Grid Padding="20,28,20,34">
+            <VerticalStackLayout
+                Spacing="20"
+                MaximumWidthRequest="760"
+                HorizontalOptions="Center">
+
+                <Border Padding="24" Margin="4" StrokeThickness="0" StrokeShape="RoundRectangle 30">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#2563EB" Offset="0" />
+                            <GradientStop Color="#7C3AED" Offset="1" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+
+                    <VerticalStackLayout Spacing="14">
+                        <HorizontalStackLayout Spacing="10">
+                            <Border Padding="12,6" StrokeThickness="0" StrokeShape="RoundRectangle 16" BackgroundColor="#DBEAFE">
+                                <Label Text="{Binding OrderText}" FontSize="12" TextColor="#1D4ED8" FontAttributes="Bold" />
+                            </Border>
+
+                            <Border Padding="12,6" StrokeThickness="0" StrokeShape="RoundRectangle 16" BackgroundColor="#DCFCE7">
+                                <Label Text="{Binding StatusText}" FontSize="12" TextColor="#166534" FontAttributes="Bold" />
+                            </Border>
+                        </HorizontalStackLayout>
+
+                        <Label
+                            Text="{Binding LessonTitle}"
+                            FontSize="30"
+                            FontAttributes="Bold"
+                            TextColor="White"
+                            LineBreakMode="WordWrap" />
+
+                        <Label
+                            Text="{Binding Description}"
+                            FontSize="15"
+                            LineBreakMode="WordWrap"
+                            TextColor="#DBEAFE" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border Padding="22" Margin="4" StrokeThickness="0" StrokeShape="RoundRectangle 26" BackgroundColor="{AppThemeBinding Light=White, Dark=#1F2937}">
+                    <VerticalStackLayout Spacing="14">
+                        <Label Text="Полный текст урока" FontSize="20" FontAttributes="Bold" />
+                        <Label
+                            Text="{Binding LessonContent}"
+                            FontSize="16"
+                            LineHeight="1.25"
+                            LineBreakMode="WordWrap"
+                            TextColor="{AppThemeBinding Light=#374151, Dark=#E5E7EB}" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border Padding="0" Margin="4" StrokeThickness="0" StrokeShape="RoundRectangle 26" BackgroundColor="#111827">
+                    <VerticalStackLayout Spacing="0">
+                        <Grid Padding="18,14" BackgroundColor="#0F172A">
+                            <Label Text="Пример C#" TextColor="#CBD5E1" FontSize="13" FontAttributes="Bold" />
+                        </Grid>
+
+                        <ScrollView Orientation="Horizontal">
+                            <Label
+                                Padding="18"
+                                FontFamily="Courier New"
+                                FontSize="14"
+                                LineHeight="1.2"
+                                FormattedText="{Binding HighlightedCode}" />
+                        </ScrollView>
+                    </VerticalStackLayout>
+                </Border>
+
+                <FlexLayout
+                    Direction="Row"
+                    Wrap="Wrap"
+                    JustifyContent="SpaceBetween"
+                    AlignItems="Center">
+                    <Button
+                        Text="Пройти тест"
+                        Command="{Binding StartQuizCommand}"
+                        CornerRadius="18"
+                        HeightRequest="52"
+                        MinimumWidthRequest="170"
+                        FlexLayout.Grow="1"
+                        Margin="0,0,8,10" />
+
+                    <Button
+                        Text="Отметить как изученное"
+                        Command="{Binding MarkAsCompletedCommand}"
+                        BackgroundColor="#E5E7EB"
+                        TextColor="#111827"
+                        CornerRadius="18"
+                        HeightRequest="52"
+                        MinimumWidthRequest="210"
+                        FlexLayout.Grow="1"
+                        Margin="0,0,0,10" />
+                </FlexLayout>
+
+                <Border
+                    Padding="14"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 18"
+                    BackgroundColor="#DCFCE7"
+                    IsVisible="{Binding HasCompletionMessage}">
+                    <Label
+                        Text="{Binding CompletionMessage}"
+                        TextColor="#166534"
+                        FontAttributes="Bold" />
+                </Border>
+
+                <Border
+                    Padding="20"
+                    Margin="4"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 24"
+                    BackgroundColor="{AppThemeBinding Light=White, Dark=#1F2937}"
+                    IsVisible="{Binding HasLastQuizResult}">
+                    <VerticalStackLayout Spacing="6">
+                        <Label
+                            Text="Последняя попытка теста"
+                            FontSize="14"
+                            TextColor="{AppThemeBinding Light=#6B7280, Dark=#D1D5DB}" />
+                        <Label
+                            Text="{Binding LastQuizPercentText}"
+                            FontSize="28"
+                            FontAttributes="Bold"
+                            TextColor="#16A34A" />
+                    </VerticalStackLayout>
+                </Border>
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

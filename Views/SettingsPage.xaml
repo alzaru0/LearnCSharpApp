@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="LearnCSharpApp.Views.SettingsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewModels="clr-namespace:LearnCSharpApp.ViewModels"
+    x:DataType="viewModels:SettingsViewModel"
+    Title="Настройки">
+
+    <ScrollView BackgroundColor="{AppThemeBinding Light=#F6F7FB, Dark=#111827}">
+        <VerticalStackLayout Padding="24,32" Spacing="18">
+            <Label Text="Настройки" FontSize="28" FontAttributes="Bold" />
+            <Border Padding="20" Margin="4" StrokeThickness="0" StrokeShape="RoundRectangle 24" BackgroundColor="{AppThemeBinding Light=White, Dark=#1F2937}">
+                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="16">
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Темная тема" FontSize="16" FontAttributes="Bold" />
+                        <Label Text="Переключение применяется сразу и сохраняется после перезапуска." FontSize="13" TextColor="{AppThemeBinding Light=#6B7280, Dark=#D1D5DB}" />
+                    </VerticalStackLayout>
+                    <Switch Grid.Column="1" IsToggled="{Binding IsDarkTheme}" VerticalOptions="Center" />
+                </Grid>
+            </Border>
+            <Border Padding="20" Margin="4" StrokeThickness="0" StrokeShape="RoundRectangle 24" BackgroundColor="{AppThemeBinding Light=White, Dark=#1F2937}">
+                <VerticalStackLayout Spacing="4">
+                    <Label Text="О приложении" FontSize="16" FontAttributes="Bold" />
+                    <Label Text="LearnCSharpApp создано на .NET MAUI с архитектурой MVVM." FontSize="13" TextColor="{AppThemeBinding Light=#6B7280, Dark=#D1D5DB}" />
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

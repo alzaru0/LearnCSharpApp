@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="LearnCSharpApp.Views.ProgressPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewModels="clr-namespace:LearnCSharpApp.ViewModels"
+    x:DataType="viewModels:ProgressViewModel"
+    Title="Прогресс">
+
+    <ScrollView BackgroundColor="{AppThemeBinding Light=#F6F7FB, Dark=#111827}">
+        <Grid Padding="24,32">
+            <VerticalStackLayout Spacing="22" MaximumWidthRequest="760" HorizontalOptions="Center">
+                <VerticalStackLayout Spacing="6">
+                    <Label
+                        Text="Мой прогресс"
+                        FontSize="30"
+                        FontAttributes="Bold"
+                        TextColor="{AppThemeBinding Light=#111827, Dark=#F9FAFB}" />
+                    <Label
+                        Text="Отслеживайте прохождение курса и результаты тестирования."
+                        FontSize="15"
+                        TextColor="{AppThemeBinding Light=#6B7280, Dark=#D1D5DB}" />
+                </VerticalStackLayout>
+
+                <Border Padding="26" Margin="4" StrokeThickness="0" StrokeShape="RoundRectangle 32">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#2563EB" Offset="0" />
+                            <GradientStop Color="#7C3AED" Offset="1" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+
+                    <VerticalStackLayout Spacing="18">
+                        <Grid ColumnDefinitions="*,Auto" ColumnSpacing="16">
+                            <VerticalStackLayout Spacing="4">
+                                <Label Text="Курс пройден" TextColor="#DBEAFE" FontSize="14" />
+                                <Label
+                                    Text="{Binding ProgressPercentText}"
+                                    TextColor="White"
+                                    FontSize="42"
+                                    FontAttributes="Bold" />
+                            </VerticalStackLayout>
+
+                            <ActivityIndicator
+                                Grid.Column="1"
+                                IsRunning="{Binding IsBusy}"
+                                IsVisible="{Binding IsBusy}"
+                                Color="White"
+                                VerticalOptions="Center" />
+                        </Grid>
+
+                        <ProgressBar
+                            Progress="{Binding ProgressValue}"
+                            ProgressColor="White"
+                            BackgroundColor="#60A5FA"
+                            HeightRequest="10" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="14" RowSpacing="14">
+                    <Border Padding="20" Margin="4" StrokeThickness="0" StrokeShape="RoundRectangle 26" BackgroundColor="{AppThemeBinding Light=White, Dark=#1F2937}">
+                        <VerticalStackLayout Spacing="8">
+                            <Label Text="Завершено уроков" FontSize="14" TextColor="{AppThemeBinding Light=#6B7280, Dark=#D1D5DB}" />
+                            <Label Text="{Binding CompletedLessonsText}" FontSize="30" FontAttributes="Bold" TextColor="#2563EB" />
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <Border Grid.Column="1" Padding="20" Margin="4" StrokeThickness="0" StrokeShape="RoundRectangle 26" BackgroundColor="{AppThemeBinding Light=White, Dark=#1F2937}">
+                        <VerticalStackLayout Spacing="8">
+                            <Label Text="Средний балл тестов" FontSize="14" TextColor="{AppThemeBinding Light=#6B7280, Dark=#D1D5DB}" />
+                            <Label Text="{Binding AverageQuizScoreText}" FontSize="30" FontAttributes="Bold" TextColor="#16A34A" />
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <Border Grid.Row="1" Grid.ColumnSpan="2" Padding="20" Margin="4" StrokeThickness="0" StrokeShape="RoundRectangle 26" BackgroundColor="{AppThemeBinding Light=White, Dark=#1F2937}">
+                        <Grid ColumnDefinitions="*,Auto" ColumnSpacing="14">
+                            <VerticalStackLayout Spacing="6">
+                                <Label Text="Пройдено тестов" FontSize="14" TextColor="{AppThemeBinding Light=#6B7280, Dark=#D1D5DB}" />
+                                <Label Text="{Binding TestsTaken}" FontSize="26" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#111827, Dark=#F9FAFB}" />
+                            </VerticalStackLayout>
+
+                            <Button
+                                Grid.Column="1"
+                                Text="Сбросить"
+                                Command="{Binding ResetProgressCommand}"
+                                BackgroundColor="{AppThemeBinding Light=#E5E7EB, Dark=#374151}"
+                                TextColor="{AppThemeBinding Light=#111827, Dark=#F9FAFB}"
+                                CornerRadius="18"
+                                HeightRequest="48"
+                                VerticalOptions="Center" />
+                        </Grid>
+                    </Border>
+                </Grid>
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

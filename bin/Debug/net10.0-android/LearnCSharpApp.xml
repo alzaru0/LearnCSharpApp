@@ -1,0 +1,468 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LearnCSharpApp</name>
+    </assembly>
+    <members>
+        <member name="T:LearnCSharpApp.Models.QuizAnswerOption">
+            <inheritdoc/>
+        </member>
+        <member name="P:LearnCSharpApp.Models.QuizAnswerOption.IsSelected">
+            <inheritdoc cref="F:LearnCSharpApp.Models.QuizAnswerOption.isSelected"/>
+        </member>
+        <member name="T:LearnCSharpApp.Models.QuizLessonFilter">
+            <inheritdoc/>
+        </member>
+        <member name="P:LearnCSharpApp.Models.QuizLessonFilter.IsSelected">
+            <inheritdoc cref="F:LearnCSharpApp.Models.QuizLessonFilter.isSelected"/>
+        </member>
+        <member name="T:LearnCSharpApp.Models.QuizQuestion">
+            <inheritdoc/>
+        </member>
+        <member name="P:LearnCSharpApp.Models.QuizQuestion.SelectedAnswerIndex">
+            <inheritdoc cref="F:LearnCSharpApp.Models.QuizQuestion.selectedAnswerIndex"/>
+        </member>
+        <member name="M:LearnCSharpApp.Models.QuizQuestion.OnSelectedAnswerIndexChanged(System.Int32)">
+            <summary>Executes the logic for when <see cref="P:LearnCSharpApp.Models.QuizQuestion.SelectedAnswerIndex"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:LearnCSharpApp.Models.QuizQuestion.SelectedAnswerIndex"/> is changed.</remarks>
+        </member>
+        <member name="T:LearnCSharpApp.ViewModels.BaseViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.BaseViewModel.IsBusy">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.BaseViewModel.isBusy"/>
+        </member>
+        <member name="T:LearnCSharpApp.ViewModels.HomeViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.HomeViewModel.CompletedLessons">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.HomeViewModel.completedLessons"/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.HomeViewModel.TotalLessons">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.HomeViewModel.totalLessons"/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.HomeViewModel.ProgressValue">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.HomeViewModel.progressValue"/>
+        </member>
+        <member name="F:LearnCSharpApp.ViewModels.HomeViewModel.openLessonsCommand">
+            <summary>The backing field for <see cref="P:LearnCSharpApp.ViewModels.HomeViewModel.OpenLessonsCommand"/>.</summary>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.HomeViewModel.OpenLessonsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:LearnCSharpApp.ViewModels.HomeViewModel.OpenLessonsAsync"/>.</summary>
+        </member>
+        <member name="T:LearnCSharpApp.ViewModels.LessonDetailViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.LessonDetailViewModel.LessonTitle">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.LessonDetailViewModel.lessonTitle"/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.LessonDetailViewModel.Description">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.LessonDetailViewModel.description"/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.LessonDetailViewModel.LessonContent">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.LessonDetailViewModel.lessonContent"/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.LessonDetailViewModel.LessonId">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.LessonDetailViewModel.lessonId"/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.LessonDetailViewModel.IsCompleted">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.LessonDetailViewModel.isCompleted"/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.LessonDetailViewModel.IsStarted">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.LessonDetailViewModel.isStarted"/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.LessonDetailViewModel.CompletionMessage">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.LessonDetailViewModel.completionMessage"/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.LessonDetailViewModel.LastQuizPercentText">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.LessonDetailViewModel.lastQuizPercentText"/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.LessonDetailViewModel.HasLastQuizResult">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.LessonDetailViewModel.hasLastQuizResult"/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.LessonDetailViewModel.HighlightedCode">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.LessonDetailViewModel.highlightedCode"/>
+        </member>
+        <member name="M:LearnCSharpApp.ViewModels.LessonDetailViewModel.OnLessonIdChanged(System.Int32)">
+            <summary>Executes the logic for when <see cref="P:LearnCSharpApp.ViewModels.LessonDetailViewModel.LessonId"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:LearnCSharpApp.ViewModels.LessonDetailViewModel.LessonId"/> is changed.</remarks>
+        </member>
+        <member name="M:LearnCSharpApp.ViewModels.LessonDetailViewModel.OnIsCompletedChanged(System.Boolean)">
+            <summary>Executes the logic for when <see cref="P:LearnCSharpApp.ViewModels.LessonDetailViewModel.IsCompleted"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:LearnCSharpApp.ViewModels.LessonDetailViewModel.IsCompleted"/> is changed.</remarks>
+        </member>
+        <member name="M:LearnCSharpApp.ViewModels.LessonDetailViewModel.OnIsStartedChanged(System.Boolean)">
+            <summary>Executes the logic for when <see cref="P:LearnCSharpApp.ViewModels.LessonDetailViewModel.IsStarted"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:LearnCSharpApp.ViewModels.LessonDetailViewModel.IsStarted"/> is changed.</remarks>
+        </member>
+        <member name="M:LearnCSharpApp.ViewModels.LessonDetailViewModel.OnCompletionMessageChanged(System.String)">
+            <summary>Executes the logic for when <see cref="P:LearnCSharpApp.ViewModels.LessonDetailViewModel.CompletionMessage"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:LearnCSharpApp.ViewModels.LessonDetailViewModel.CompletionMessage"/> is changed.</remarks>
+        </member>
+        <member name="F:LearnCSharpApp.ViewModels.LessonDetailViewModel.startQuizCommand">
+            <summary>The backing field for <see cref="P:LearnCSharpApp.ViewModels.LessonDetailViewModel.StartQuizCommand"/>.</summary>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.LessonDetailViewModel.StartQuizCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:LearnCSharpApp.ViewModels.LessonDetailViewModel.StartQuizAsync"/>.</summary>
+        </member>
+        <member name="F:LearnCSharpApp.ViewModels.LessonDetailViewModel.markAsCompletedCommand">
+            <summary>The backing field for <see cref="P:LearnCSharpApp.ViewModels.LessonDetailViewModel.MarkAsCompletedCommand"/>.</summary>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.LessonDetailViewModel.MarkAsCompletedCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:LearnCSharpApp.ViewModels.LessonDetailViewModel.MarkAsCompletedAsync"/>.</summary>
+        </member>
+        <member name="T:LearnCSharpApp.ViewModels.LessonsViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.LessonsViewModel.SearchText">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.LessonsViewModel.searchText"/>
+        </member>
+        <member name="M:LearnCSharpApp.ViewModels.LessonsViewModel.OnSearchTextChanged(System.String)">
+            <summary>Executes the logic for when <see cref="P:LearnCSharpApp.ViewModels.LessonsViewModel.SearchText"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:LearnCSharpApp.ViewModels.LessonsViewModel.SearchText"/> is changed.</remarks>
+        </member>
+        <member name="F:LearnCSharpApp.ViewModels.LessonsViewModel.openLessonCommand">
+            <summary>The backing field for <see cref="P:LearnCSharpApp.ViewModels.LessonsViewModel.OpenLessonCommand"/>.</summary>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.LessonsViewModel.OpenLessonCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:LearnCSharpApp.ViewModels.LessonsViewModel.OpenLessonAsync(LearnCSharpApp.Models.Lesson)"/>.</summary>
+        </member>
+        <member name="T:LearnCSharpApp.ViewModels.ProgressViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.ProgressViewModel.CompletedLessons">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.ProgressViewModel.completedLessons"/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.ProgressViewModel.TotalLessons">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.ProgressViewModel.totalLessons"/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.ProgressViewModel.ProgressValue">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.ProgressViewModel.progressValue"/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.ProgressViewModel.ProgressPercentText">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.ProgressViewModel.progressPercentText"/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.ProgressViewModel.AverageQuizScoreText">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.ProgressViewModel.averageQuizScoreText"/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.ProgressViewModel.TestsTaken">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.ProgressViewModel.testsTaken"/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.ProgressViewModel.CompletedLessonsText">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.ProgressViewModel.completedLessonsText"/>
+        </member>
+        <member name="F:LearnCSharpApp.ViewModels.ProgressViewModel.completeNextLessonCommand">
+            <summary>The backing field for <see cref="P:LearnCSharpApp.ViewModels.ProgressViewModel.CompleteNextLessonCommand"/>.</summary>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.ProgressViewModel.CompleteNextLessonCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:LearnCSharpApp.ViewModels.ProgressViewModel.CompleteNextLessonAsync"/>.</summary>
+        </member>
+        <member name="F:LearnCSharpApp.ViewModels.ProgressViewModel.resetProgressCommand">
+            <summary>The backing field for <see cref="P:LearnCSharpApp.ViewModels.ProgressViewModel.ResetProgressCommand"/>.</summary>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.ProgressViewModel.ResetProgressCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:LearnCSharpApp.ViewModels.ProgressViewModel.ResetProgressAsync"/>.</summary>
+        </member>
+        <member name="T:LearnCSharpApp.ViewModels.QuizViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.QuizViewModel.SelectedLessonTitle">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.QuizViewModel.selectedLessonTitle"/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.QuizViewModel.Score">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.QuizViewModel.score"/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.QuizViewModel.TotalQuestions">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.QuizViewModel.totalQuestions"/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.QuizViewModel.HasResult">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.QuizViewModel.hasResult"/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.QuizViewModel.ResultText">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.QuizViewModel.resultText"/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.QuizViewModel.EmptyMessage">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.QuizViewModel.emptyMessage"/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.QuizViewModel.IsResultPopupVisible">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.QuizViewModel.isResultPopupVisible"/>
+        </member>
+        <member name="M:LearnCSharpApp.ViewModels.QuizViewModel.OnSelectedLessonTitleChanged(System.String)">
+            <summary>Executes the logic for when <see cref="P:LearnCSharpApp.ViewModels.QuizViewModel.SelectedLessonTitle"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:LearnCSharpApp.ViewModels.QuizViewModel.SelectedLessonTitle"/> is changed.</remarks>
+        </member>
+        <member name="M:LearnCSharpApp.ViewModels.QuizViewModel.OnScoreChanged(System.Int32)">
+            <summary>Executes the logic for when <see cref="P:LearnCSharpApp.ViewModels.QuizViewModel.Score"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:LearnCSharpApp.ViewModels.QuizViewModel.Score"/> is changed.</remarks>
+        </member>
+        <member name="M:LearnCSharpApp.ViewModels.QuizViewModel.OnTotalQuestionsChanged(System.Int32)">
+            <summary>Executes the logic for when <see cref="P:LearnCSharpApp.ViewModels.QuizViewModel.TotalQuestions"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:LearnCSharpApp.ViewModels.QuizViewModel.TotalQuestions"/> is changed.</remarks>
+        </member>
+        <member name="M:LearnCSharpApp.ViewModels.QuizViewModel.OnHasResultChanged(System.Boolean)">
+            <summary>Executes the logic for when <see cref="P:LearnCSharpApp.ViewModels.QuizViewModel.HasResult"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:LearnCSharpApp.ViewModels.QuizViewModel.HasResult"/> is changed.</remarks>
+        </member>
+        <member name="F:LearnCSharpApp.ViewModels.QuizViewModel.selectLessonFilterCommand">
+            <summary>The backing field for <see cref="P:LearnCSharpApp.ViewModels.QuizViewModel.SelectLessonFilterCommand"/>.</summary>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.QuizViewModel.SelectLessonFilterCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:LearnCSharpApp.ViewModels.QuizViewModel.SelectLessonFilter(LearnCSharpApp.Models.QuizLessonFilter)"/>.</summary>
+        </member>
+        <member name="F:LearnCSharpApp.ViewModels.QuizViewModel.selectAnswerCommand">
+            <summary>The backing field for <see cref="P:LearnCSharpApp.ViewModels.QuizViewModel.SelectAnswerCommand"/>.</summary>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.QuizViewModel.SelectAnswerCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:LearnCSharpApp.ViewModels.QuizViewModel.SelectAnswer(LearnCSharpApp.Models.QuizAnswerOption)"/>.</summary>
+        </member>
+        <member name="F:LearnCSharpApp.ViewModels.QuizViewModel.submitQuizCommand">
+            <summary>The backing field for <see cref="P:LearnCSharpApp.ViewModels.QuizViewModel.SubmitQuizCommand"/>.</summary>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.QuizViewModel.SubmitQuizCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:LearnCSharpApp.ViewModels.QuizViewModel.SubmitQuizAsync"/>.</summary>
+        </member>
+        <member name="F:LearnCSharpApp.ViewModels.QuizViewModel.resetQuizCommand">
+            <summary>The backing field for <see cref="P:LearnCSharpApp.ViewModels.QuizViewModel.ResetQuizCommand"/>.</summary>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.QuizViewModel.ResetQuizCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:LearnCSharpApp.ViewModels.QuizViewModel.ResetQuiz"/>.</summary>
+        </member>
+        <member name="F:LearnCSharpApp.ViewModels.QuizViewModel.closeResultPopupCommand">
+            <summary>The backing field for <see cref="P:LearnCSharpApp.ViewModels.QuizViewModel.CloseResultPopupCommand"/>.</summary>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.QuizViewModel.CloseResultPopupCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:LearnCSharpApp.ViewModels.QuizViewModel.CloseResultPopup"/>.</summary>
+        </member>
+        <member name="F:LearnCSharpApp.ViewModels.QuizViewModel.returnToLessonCommand">
+            <summary>The backing field for <see cref="P:LearnCSharpApp.ViewModels.QuizViewModel.ReturnToLessonCommand"/>.</summary>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.QuizViewModel.ReturnToLessonCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:LearnCSharpApp.ViewModels.QuizViewModel.ReturnToLessonAsync"/>.</summary>
+        </member>
+        <member name="T:LearnCSharpApp.ViewModels.SettingsViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:LearnCSharpApp.ViewModels.SettingsViewModel.IsDarkTheme">
+            <inheritdoc cref="F:LearnCSharpApp.ViewModels.SettingsViewModel.isDarkTheme"/>
+        </member>
+        <member name="M:LearnCSharpApp.ViewModels.SettingsViewModel.OnIsDarkThemeChanged(System.Boolean)">
+            <summary>Executes the logic for when <see cref="P:LearnCSharpApp.ViewModels.SettingsViewModel.IsDarkTheme"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:LearnCSharpApp.ViewModels.SettingsViewModel.IsDarkTheme"/> is changed.</remarks>
+        </member>
+        <member name="T:LearnCSharpApp.Resource">
+            <summary>
+            Android Resource Designer class.
+            Exposes the Android Resource designer assembly into the project Namespace.
+            </summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsSelected">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsSelected" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedAnswerIndex">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedAnswerIndex" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CompletedLessons">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CompletedLessons" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TotalLessons">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TotalLessons" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ProgressValue">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ProgressValue" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.LessonTitle">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "LessonTitle" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Description">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Description" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.LessonContent">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "LessonContent" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.LessonId">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "LessonId" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsCompleted">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsCompleted" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsStarted">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsStarted" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CompletionMessage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CompletionMessage" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.LastQuizPercentText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "LastQuizPercentText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HasLastQuizResult">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HasLastQuizResult" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HighlightedCode">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HighlightedCode" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SearchText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SearchText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ProgressPercentText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ProgressPercentText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.AverageQuizScoreText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "AverageQuizScoreText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TestsTaken">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TestsTaken" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CompletedLessonsText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CompletedLessonsText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedLessonTitle">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedLessonTitle" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Score">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Score" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TotalQuestions">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TotalQuestions" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HasResult">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HasResult" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ResultText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ResultText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.EmptyMessage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "EmptyMessage" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsResultPopupVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsResultPopupVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsDarkTheme">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsDarkTheme" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsSelected">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsSelected" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedAnswerIndex">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedAnswerIndex" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CompletedLessons">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CompletedLessons" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TotalLessons">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TotalLessons" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ProgressValue">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ProgressValue" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.LessonTitle">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "LessonTitle" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Description">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Description" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.LessonContent">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "LessonContent" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.LessonId">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "LessonId" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsCompleted">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsCompleted" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsStarted">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsStarted" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CompletionMessage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CompletionMessage" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.LastQuizPercentText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "LastQuizPercentText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HasLastQuizResult">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HasLastQuizResult" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HighlightedCode">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HighlightedCode" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SearchText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SearchText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ProgressPercentText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ProgressPercentText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.AverageQuizScoreText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "AverageQuizScoreText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TestsTaken">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TestsTaken" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CompletedLessonsText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CompletedLessonsText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedLessonTitle">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedLessonTitle" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Score">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Score" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TotalQuestions">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TotalQuestions" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HasResult">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HasResult" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ResultText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ResultText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.EmptyMessage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "EmptyMessage" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsResultPopupVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsResultPopupVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsDarkTheme">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsDarkTheme" generated properties.</summary>
+        </member>
+    </members>
+</doc>
