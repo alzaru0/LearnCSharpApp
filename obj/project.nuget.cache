@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CZxpL7eiXsE=",
+  "dgSpecHash": "EPqO/al/4mA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Aliya\\Desktop\\kursovaia\\LearnCSharpApp\\LearnCSharpApp.csproj",
+  "projectFilePath": "C:\\Users\\Aliya\\Desktop\\LearnCSharpApp\\LearnCSharpApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Aliya\\.nuget\\packages\\communitytoolkit.mvvm\\8.4.2\\communitytoolkit.mvvm.8.4.2.nupkg.sha512",
     "C:\\Users\\Aliya\\.nuget\\packages\\googlegson\\2.13.1.1\\googlegson.2.13.1.1.nupkg.sha512",
